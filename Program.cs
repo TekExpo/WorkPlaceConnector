@@ -272,7 +272,10 @@ namespace WorkPlaceConnector
                 var newItem = new ExternalItem
                 {
                     Id = part.PostId.ToString(),
-                    Content = part.description,
+                    Content = new PayloadContent
+                    {
+                        Value = "<html>" + part.description + "</html>"
+                    },
                     Acl = new List<Acl>
                     {
                         new Acl {
